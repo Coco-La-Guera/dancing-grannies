@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Courier Prime', monospace; system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color:rgb(120, 77, 40);
+}
+.entry-header {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+
+/* Two side-by-side columns (your familiar flex design) */
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.left-box {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 40px;
+}
+/*.left-box video {
+  width: 100%;
+  height: auto;
+  display: block;
+}*/
+
+.tv {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 665 / 842;
+  overflow: hidden;
+}
+.tv {
+  --screen-left: 19%; /* distance from left edge of PNG to window */
+  --screen-top: 13%; /* distance from top edge */
+  --screen-width: 63%; /* window width */
+  --screen-height: 42%; /* window height */
+}
+
+/* The video lives ONLY inside this window */
+.screen {
+  position: absolute;
+  left: var(--screen-left);
+  top: var(--screen-top);
+  width: var(--screen-width);
+  height: var(--screen-height);
+  overflow: hidden;
+  border-radius: 8px; /* adjust to match rounded corners of the TV window */
+}
+
+.screen video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills the window, no black bars */
+  display: block;
+}
+.tv video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tv-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.right-box {
+  flex: 1.8;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding-top:6rem;
+}
+.right-box > * {
+  margin: 0;
+}
+.right-box h3 { margin-bottom: 0.5rem; }
+.right-box p  { margin: 0.25rem 0; line-height: 1.5; }
+.map-pin {
+  width: 18px;         /* small enough to sit with text */
+  height: auto;
+  vertical-align: middle;  /* align with text baseline */
+  margin-left: 0.4rem;     /* little breathing room from text */
+  cursor: pointer;
+}
+.right-box p a {
+  display: inline;   /* default, but reinforces inline behavior */
+}
+.comments {
+  margin: 0.5rem 0 0;     /* a little space above the list */
+  padding-left: 1.2rem;   /* indent bullets slightly */
+}
+
+.comments li {
+  margin-bottom: 0.25rem; /* space between comments */
+  font-size: 0.9rem;      /* a touch smaller than body text */
+  line-height: 1.4;
+}
+
+
+
+
+/* Stack on small screens */
+/*@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+/*.container > * {
+  flex: 0 0 320px;
+  outline: 1px dashed teal;
+}*/
