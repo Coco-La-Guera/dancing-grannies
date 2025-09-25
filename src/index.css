@@ -3,16 +3,17 @@
 }
 body {
   margin: 0;
-  font-family: 'Courier Prime', monospace; system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color:rgb(120, 77, 40);
+  font-family: 'Courier Prime', monospace, system-ui, -apple-system, Segoe UI,
+    Roboto, sans-serif;
+  color: rgb(120, 77, 40);
+  background-color: rgb(146, 204, 240);
 }
 .entry-header {
   text-align: center;
   margin-bottom: 0.5rem;
+  color: rgb(146, 204, 240);
 }
 
-
-/* Two side-by-side columns (your familiar flex design) */
 .container {
   display: flex;
   align-items: flex-start;
@@ -22,7 +23,32 @@ body {
   max-width: 1000px;
   margin: 0 auto;
 }
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24rem; /* controls distance between nav + header */
+  padding: 2rem 2rem;
+  background: rgb(146, 204, 240); /* light gray for now */
+  border-bottom: 1px solid #f9a3a3;
+}
 
+.navbar h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 40;
+  padding: 0;
+}
+
+.navbar li {
+  opacity: 0.6; /* “unfinished” hint */
+}
 .left-box {
   flex: 1;
   min-width: 0;
@@ -82,45 +108,101 @@ body {
   height: 100%;
   pointer-events: none;
 }
-
-.right-box {
-  flex: 1.8;
-  min-width: 0;
+/* align bottoms of TV and card */
+.entry {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 0.5rem;
-  padding-top:6rem;
+  gap: 2rem;
+  align-items: flex-end;
 }
+
+/* right column just holds the card */
+.right-box {
+  flex: 1.5;
+  padding-left: 50px;
+  min-width: 0;
+  display: table-column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.entry-card {
+  width: clamp(440px, 44vw, 720px);
+  aspect-ratio: 4/3;
+  padding: 2rem;
+  background-image: url('/assets/library-card4.png');
+  background-repeat: no-repeat;
+  background-size: 101% auto; /* oversize to compensate for transparent border */
+  background-position: 50% 45px; /* center, then push down a bit; try negative/positive */
+  border-radius: 12px;
+  overflow: auto;
+  position: relative;
+  isolation: isolate;
+}
+
+.entry-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* keep your legibility overlay */
+/*
+.entry-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: inherit;
+  z-index: 0;
+}
+.entry-card > * {
+  position: relative;
+  z-index: 1;
+}*/
 .right-box > * {
   margin: 0;
 }
-.right-box h3 { margin-bottom: 0.5rem; }
-.right-box p  { margin: 0.25rem 0; line-height: 1.5; }
+.right-box h3 {
+  padding-left: 20px;
+  margin-top: 72px;
+  margin-bottom: 0.5rem;
+}
+
+.right-box p {
+  padding-left: 20px;
+  margin-left: 10px;
+  margin-top: 0px;
+  margin: 0.25rem 0;
+  padding-right: 5px;
+  line-height: 1.5;
+}
 .map-pin {
-  width: 18px;         /* small enough to sit with text */
+  width: 25px; /* small enough to sit with text */
   height: auto;
-  vertical-align: middle;  /* align with text baseline */
-  margin-left: 0.4rem;     /* little breathing room from text */
+  vertical-align: middle; /* align with text baseline */
+  margin-left: 0.4rem; /* little breathing room from text */
   cursor: pointer;
 }
 .right-box p a {
-  display: inline;   /* default, but reinforces inline behavior */
+  display: inline; /* default, but reinforces inline behavior */
+}
+.commentsTitle {
+  padding-top: 20px;
+  margin-bottom: 0;
 }
 .comments {
-  margin: 0.5rem 0 0;     /* a little space above the list */
-  padding-left: 1.2rem;   /* indent bullets slightly */
+  margin-top: 0px;
+  margin: 1rem 0 0; /* a little space above the list */
+  padding-left: 5rem; /* indent bullets slightly */
 }
 
 .comments li {
   margin-bottom: 0.25rem; /* space between comments */
-  font-size: 0.9rem;      /* a touch smaller than body text */
+  font-size: 0.9rem; /* a touch smaller than body text */
   line-height: 1.4;
 }
-
-
-
-
+.description {
+  padding-top: 13px;
+}
 /* Stack on small screens */
 /*@media (max-width: 900px) {
   .container {

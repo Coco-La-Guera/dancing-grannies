@@ -16,28 +16,37 @@ export default function Entry(props) {
 
       {/* Right side: text info */}
       <aside className="right-box">
-        <h3>{props.name}</h3>
-        <p>
-          {props.location}
-          {props.mapsLink && (
-            <a href={props.mapsLink} target="_blank" rel="noreferrer">
-              <img
-                src={props.img.src}
-                alt={props.img.alt}
-                className="map-pin"
-              />
-            </a>
-          )}
-        </p>
-        <p>{props.hours}</p>
-        <p>{props.description}</p>
-        {props.comments && props.comments.length > 0 && (
-          <ul className="comments">
-            {props.comments.map(function (comment) {
-              return <li key={comment.id}>{comment.text}</li>
-            })}
-          </ul>
-        )}
+        <div className="entry-card">
+          <div className="entry-card__content">
+            <h3>{props.name}</h3>
+            <p>
+              {props.location}
+              {props.mapsLink && (
+                <a href={props.mapsLink} target="_blank" rel="noreferrer">
+                  <img
+                    src={props.img.src}
+                    alt={props.img.alt}
+                    className="map-pin"
+                  />
+                </a>
+              )}
+            </p>
+            <p>{props.hours}</p>
+            <p className="description">{props.description}</p>
+            <p className="commentsTitle">{props.commentsTitle}</p>
+            {props.comments && props.comments.length > 0 && (
+              <ul className="comments">
+                {props.comments.map(function (comment) {
+                  return (
+                    <>
+                      <li key={comment.id}>{comment.text}</li>
+                    </>
+                  )
+                })}
+              </ul>
+            )}
+          </div>
+        </div>
       </aside>
     </main>
   )

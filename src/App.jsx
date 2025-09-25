@@ -1,4 +1,5 @@
 import Entry from './components/Entry.jsx'
+import NavBar from './components/NavBar'
 import data from './data.js'
 
 export default function App() {
@@ -14,9 +15,15 @@ export default function App() {
         description={item.description}
         videoSrc={item.videoSrc}
         frame={item.frame}
+        commentsTitle={item.commentsTitle}
         comments={item.comments}
       />
     )
   })
-  return <>{entries}</>
+  return (
+    <>
+      <NavBar />
+      <main>{entries}</main>
+    </>
+  )
 }
