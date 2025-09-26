@@ -33,11 +33,10 @@ This project is intentionally designed as a **Scrimba Travel Journal practice**,
 - **Interactive comments** (add form + local state; later, persistence)  
 - **Deeper design**  
   - Make **TV knobs interactive** (hover/active states; potential controls)  
-  - Style the text panel like a **library index card** (background texture)  
 - **Video edits**  
-  - Trim/cut to highlight best moments  
+  - Trim/cut using jump cuts to further enhance its inherent 'homemovie feel' 
   - Compress for faster load times  
-  - Subtle color/brightness tweaks and audio leveling  
+  - Subtle color/brightness tweaks 
 
 ---
 
