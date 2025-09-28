@@ -42,12 +42,21 @@ This project is intentionally designed as a **Scrimba Travel Journal practice**,
 
 The biggest challenges I faced came from places I least expected. Managing frustration when I stalled at unexpected roadblocks became part of the process — for example, wrestling with CSS to make the library card lay properly beneath its content. Along the way, I also picked up new tools and workflows. I learned to use HandBrake for video conversion and iMovie for editing, which helped me prepare custom video assets for the site. While small, these additions expanded my toolbox and gave me a taste of real-world creative problem solving.
 
+---
+
 📜 Credits
 
 - TV frame overlay licensed from iStock
  (Asset ID: 157188471)
 - Video clips filmed and edited by me
 - Pin icon and library card deck designed/photographed by me
+
+---
+
+ 🔗 Links
+ 
+👉 Live Site
+👉 Source Code
 
 
 ## 📂 Project Structure
