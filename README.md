@@ -55,8 +55,8 @@ The biggest challenges I faced came from places I least expected. Managing frust
 
  🔗 Links
  
-👉 Live Site
-👉 Source Code
+👉 [Live Site](https://dancing-grannies.netlify.app)  
+👉 [Source Code](https://github.com/Coco-La-Guera/dancing-grannies)
 
 
 ## 📂 Project Structure
